@@ -7,6 +7,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+import s from './ProductList.module.css'
 
 const useStyles = makeStyles((theme) => ({
   mainroot: {
@@ -38,12 +39,6 @@ const useStyles = makeStyles((theme) => ({
   priceSection: {
     display: 'flex',
   },
-  title: {
-    margin: 'auto',
-    width: '70%',
-    textAlign: 'left',
-    marginLeft: '0'
-  },
   price: {
     margin: 0
   },
@@ -72,7 +67,7 @@ const ProductList = (props) => {
   const product = props.products;
   return (
     <Container className={classes.mainroot} maxWidth="xl">
-      <h1>Things We Know You'll Love</h1>
+      <h1 className={s.title}>Things We Know You'll Love</h1>
       <Grid className={classes.root} container spacing={2}>
         {product?.map((_product) => (
           <Grid className={classes.gridWrapper} key={`a${_product.id}`} item xs={6} md={4}>
@@ -85,15 +80,15 @@ const ProductList = (props) => {
                     <a>
                       <CardMedia
                         className={classes.media}
-                        height="300"
+                        height="220"
                         component="img"
                         image={_product.images[0]?.url}
-                        title={_product.name}
+                        title=''
                       />
                       <CardContent className={classes.cardContent}>
-                        <div className={classes.priceSection}>
-                          <h4 className={classes.title}>{_product.name}</h4>
-                          <p className={classes.price}>${_product.price.value}</p>
+                        <div className={s.priceSection}>
+                          <h4 className={s.productTitle} dangerouslySetInnerHTML={{ __html: _product.name }} />
+                          <p className={s.price}>${_product.price.value}</p>
                         </div>
                       </CardContent>
                     </a>

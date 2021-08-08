@@ -6,14 +6,14 @@ import Link from "next/link";
 const useStyles = makeStyles({
 });
 
-export default function Cover() {
+export default function Cover({ imagepath, link }) {
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
-      <Link href='/search/apple-related' passHref>
+      <Link href={link} passHref>
         <a>
-          <img src='https://cdn11.bigcommerce.com/s-il8tmlzhpf/images/stencil/original/carousel/13/slider-1.png?c=1' />
+          <img src={imagepath} />
         </a>
       </Link>
     </Card>

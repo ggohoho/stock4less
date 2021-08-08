@@ -41,13 +41,12 @@ export default function Home({
   categories,
   brands
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log('Arun Jha', categories);
   return (
     <>
-      <Cover />
+      <Cover imagepath='https://cdn11.bigcommerce.com/s-il8tmlzhpf/images/stencil/original/carousel/13/slider-1.png?c=1' link='/search/apple-related' />
       <ProductList products={products} />
-      <Cover />
-      <Grid variant="filled">
+      <Cover imagepath='https://cdn11.bigcommerce.com/s-il8tmlzhpf/images/stencil/original/carousel/18/slider-2__55524.png?c=1' link='/search/electronics' />
+      {/* <Grid variant="filled">
         {products.slice(0, 3).map((product: any, i: number) => (
           <ProductCard
             key={product.id}
@@ -85,7 +84,7 @@ export default function Home({
         {products.slice(3).map((product: any, i: number) => (
           <ProductCard key={product.id} product={product} variant="slim" />
         ))}
-      </Marquee>
+      </Marquee> */}
       {/* <HomeAllProductsGrid
         newestProducts={products}
         categories={categories}
