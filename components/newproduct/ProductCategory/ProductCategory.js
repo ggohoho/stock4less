@@ -66,7 +66,6 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export default function ProductCategory(props) {
-  console.log('Arun Jha >>', props);
   const classes = useStyles();
   const { options } = props;
   return (

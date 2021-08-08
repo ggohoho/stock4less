@@ -45,8 +45,6 @@ export default function ProductDetails(props) {
       setLoading(false)
     }
   }
-
-  console.log('Arun Jha props', props);
   return (
     <Container maxWidth="xl">
       <Grid container className={classes.root} spacing={2}>
